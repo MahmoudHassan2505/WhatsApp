@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:whatsapp/colors.dart';
 import 'package:whatsapp/info.dart';
 
@@ -10,14 +9,14 @@ class ContactsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
-      child: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: info.length,
-              itemBuilder: (context, index) {
-                return InkWell(
+      child: Expanded(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: info.length,
+          itemBuilder: (context, index) {
+            return Column(
+              children: [
+                InkWell(
                   onTap: () {},
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 8),
@@ -38,6 +37,7 @@ class ContactsList extends StatelessWidget {
                         ),
                       ),
                       leading: CircleAvatar(
+                        radius: 30,
                         backgroundImage: NetworkImage(
                           info[index]['profilePic'].toString(),
                         ),
@@ -49,11 +49,15 @@ class ContactsList extends StatelessWidget {
                       ),
                     ),
                   ),
-                );
-              },
-            ),
-          ),
-        ],
+                ),
+                Divider(
+                  color: dividerColor,
+                  indent: 85,
+                )
+              ],
+            );
+          },
+        ),
       ),
     );
   }
