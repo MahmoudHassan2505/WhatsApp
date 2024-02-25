@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/widgets/contact_list.dart';
+import 'package:whatsapp/widgets/web_profile_bar.dart';
+import 'package:whatsapp/widgets/web_search_bar.dart';
 
 class WebView extends StatelessWidget {
   const WebView({super.key});
@@ -14,8 +16,8 @@ class WebView extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                //web Profile bar
-                //web search bar
+                WebProfileBar(),
+                WebSearchBar(),
                 ContactsList(),
               ],
             ),
